@@ -3,7 +3,7 @@ const typef = require('typeforce')
 const OPS = require('bitcoin-ops')
 
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 
 function stacksEqual (a, b) {
   if (a.length !== b.length) return false
@@ -27,7 +27,7 @@ function p2data (a, opts) {
     data: typef.maybe(typef.arrayOf(typef.Buffer))
   }, a)
 
-  const network = a.network || BITCOIN_NETWORK
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   lazy.prop(o, 'output', function () {

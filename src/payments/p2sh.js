@@ -4,7 +4,7 @@ const OPS = require('bitcoin-ops')
 
 const bcrypto = require('../crypto')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 const bs58check = require('bs58check')
 
 function stacksEqual (a, b) {
@@ -45,7 +45,7 @@ function p2sh (a, opts) {
     witness: typef.maybe(typef.arrayOf(typef.Buffer))
   }, a)
 
-  const network = a.network || BITCOIN_NETWORK
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   const _address = lazy.value(function () {

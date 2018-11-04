@@ -5,7 +5,7 @@ const ecc = require('tiny-secp256k1')
 
 const bcrypto = require('../crypto')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 const bs58check = require('bs58check')
 
 // input: {signature} {pubkey}
@@ -39,7 +39,7 @@ function p2pkh (a, opts) {
   })
   const _chunks = lazy.value(function () { return bscript.decompile(a.input) })
 
-  const network = a.network || BITCOIN_NETWORK
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   lazy.prop(o, 'address', function () {

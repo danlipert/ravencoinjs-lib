@@ -430,7 +430,7 @@ function build (type, input, allowIncomplete) {
 
 function TransactionBuilder (network, maximumFeeRate) {
   this.__prevTxSet = {}
-  this.network = network || networks.bitcoin
+  this.network = network || networks.ravencoin
 
   // WARNING: This is __NOT__ to be relied on, its just another potential safety mechanism (safety in-depth)
   this.maximumFeeRate = maximumFeeRate || 2500
