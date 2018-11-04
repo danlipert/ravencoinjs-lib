@@ -6,7 +6,7 @@ const ecc = require('tiny-secp256k1')
 const bcrypto = require('../crypto')
 const bech32 = require('bech32')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 
 const EMPTY_BUFFER = Buffer.alloc(0)
 
@@ -45,7 +45,7 @@ function p2wpkh (a, opts) {
     }
   })
 
-  const network = a.network || BITCOIN_NETWORK
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   lazy.prop(o, 'address', function () {

@@ -2,20 +2,20 @@
 // Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
 
 module.exports = {
-  bitcoin: {
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
-    bech32: 'bc',
+  ravencoin: {
+    messagePrefix: '\x16Ravencoin Signed Message:\n',
+    bech32: 'rc',
     bip32: {
       public: 0x0488b21e,
       private: 0x0488ade4
     },
-    pubKeyHash: 0x00,
-    scriptHash: 0x05,
+    pubKeyHash: 0x3c,
+    scriptHash: 0x7a,
     wif: 0x80
   },
   testnet: {
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
-    bech32: 'tb',
+    messagePrefix: '\x16Ravencoin Signed Message:\n',
+    bech32: 'tr',
     bip32: {
       public: 0x043587cf,
       private: 0x04358394

@@ -5,7 +5,7 @@ const OPS = require('bitcoin-ops')
 const bech32 = require('bech32')
 const bcrypto = require('../crypto')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 
 const EMPTY_BUFFER = Buffer.alloc(0)
 
@@ -59,11 +59,7 @@ function p2wsh (a, opts) {
   })
   const _rchunks = lazy.value(function () { return bscript.decompile(a.redeem.input) })
 
-  let network = a.network
-  if (!network) {
-    network = (a.redeem && a.redeem.network) || BITCOIN_NETWORK
-  }
-
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   lazy.prop(o, 'address', function () {

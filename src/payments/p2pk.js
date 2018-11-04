@@ -4,7 +4,7 @@ const OPS = require('bitcoin-ops')
 const ecc = require('tiny-secp256k1')
 
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const RAVENCOIN_NETWORK = require('../networks').ravencoin
 
 // input: {signature}
 // output: {pubKey} OP_CHECKSIG
@@ -29,7 +29,7 @@ function p2pk (a, opts) {
 
   const _chunks = lazy.value(function () { return bscript.decompile(a.input) })
 
-  const network = a.network || BITCOIN_NETWORK
+  const network = a.network || RAVENCOIN_NETWORK
   const o = { network }
 
   lazy.prop(o, 'output', function () {
